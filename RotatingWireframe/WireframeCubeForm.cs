@@ -52,8 +52,10 @@ namespace RotatingWireframe
             for (var i = 0; i < _vertices.Length; i++)
             {
                 var vertex = _vertices[i];
+
+                // if you comment out 2 Rotates then you can see the cube rotating round the relevant axes 
                 var transformed = vertex.RotateX(_angle).RotateY(_angle).RotateZ(_angle);
-                projected[i] = transformed.Project(this.ClientSize.Width, this.ClientSize.Height, 256, 4);
+                projected[i] = transformed.Project(this.ClientSize.Width, this.ClientSize.Height, 256, 6);
             }
 
             for (var j = 0; j < 6; j++)
